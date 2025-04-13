@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Philji's Portfolio - Frontend Developer passionate about UI/UX, Music, and AI/ML.">
+    <title>Portfolio Parallax Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">LOGO</a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="intro" id="home">
+        <h1>Hi, I'm <span class="highlight">John Philji</span></h1>
+        <h2><span class="typewriter-text"></span></h2>
+      </section>
+    
+      <!-- Optional: Add a "scroll down" or "about" button -->
+      <div class="scroll-down">
+        <a href="#about">↓ Scroll Down</a>
+      </div>
+
+      
+    <section class="parallax-home">
+        <img src="Home-Images/sky.png" alt="" id="">
+        <img src="Home-Images/moon.png" alt="Moon" id="moon">
+        <img src="Home-Images/water.png" alt="" id="water">
+        <img src="Home-Images/center-city.png" alt="" id="center-city">
+        <img src="Home-Images/right-city.png" alt="" id="">
+        <img src="Home-Images/left-city.png" alt="" id="">
+        <img src="Home-Images/train.png" alt="" id="train">
+        <img src="Home-Images/rail.png" alt="" id="">
+        <h1 id="text">Parallax Website</h1>
+        <img src="Home-Images/hill-left-1.png" alt="" id="">
+        <img src="Home-Images/hill-right-1.png" alt="" id="">
+    </section>
+
+    <section class="about" id="about">
+        <div class="info-box">
+            <h2>About Me</h2>
+            <p>I am a passionate frontend developer with a love for clean UI, smooth animations, and creating engaging web experiences. Also into music and exploring AI/ML!
+            </p>
+            <a href="#" class="btn">Read More!</a>
+        </div>
+
+        <img src="About-Images/waterfall.png" alt="" id="waterfall" class="about-waterfall">
+        <img src="About-Images/desert-sky.png" alt="">
+        <img src="About-Images/desert-moon.png" alt="" id="desert-moon">
+        <img src="About-Images/desert-NoSky.png" alt="">
+        <img src="About-Images/desert-rock.png" alt="">
+        <img src="About-Images/water.png" alt="">
+        <img src="About-Images/man.png" alt="" id="man">
+        <img src="About-Images/grass.png" alt="">
+    </section>
+
+    <div id="progress">
+        <span id="progress-value">
+            <i class='bx bx-chevrons-up'></i>
+        </span>
+    </div>    
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3>Driveguard</h3>
+                    <span>Safety First</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque ratione magnam quisquam! Sunt labore vero, doloremque assumenda dolores quas odit nostrum, earum numquam repudiandae quo non, laboriosam praesentium nihil!</p>
+                <a href="#" class="btn">See Project</a>
+            </div>
+
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3>Driveguard</h3>
+                    <span>Safety First</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque ratione magnam quisquam! Sunt labore vero, doloremque assumenda dolores quas odit nostrum, earum numquam repudiandae quo non, laboriosam praesentium nihil!</p>
+                <a href="#" class="btn">See Project</a>
+            </div>
+
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3>Driveguard</h3>
+                    <span>Safety First</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque ratione magnam quisquam! Sunt labore vero, doloremque assumenda dolores quas odit nostrum, earum numquam repudiandae quo non, laboriosam praesentium nihil!</p>
+                <a href="#" class="btn">See Project</a>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Let's Get In Touch</h2>
+    
+    <div class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" required>
+          <label>Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" required>
+          <label>Your Email</label>
+        </div>
+        <div class="form-group">
+          <textarea rows="5" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+  
+      <div class="social-icons">
+        <a href="https://instagram.com/johnphilji" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/919511206109" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </section>
+  
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
