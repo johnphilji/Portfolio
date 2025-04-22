@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Philji's Portfolio - Frontend Developer passionate about UI/UX, Music, and AI/ML.">
+    <title>Portfolio Parallax Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    <audio id="bg-music" src="personal/music.mp3" loop preload="auto"></audio>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+</head>
+<body>
+    <header>
+
+        <a href="#" class="logo">LOGO</a>
+        
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- Custom music toggle button -->
+  <button id="music-toggle" aria-label="Toggle background music">
+    <i class="fas fa-play"></i><a></a>
+  </button>
+        </ul>
+    </header>
+
+    <section class="intro" id="home">
+        <h1>Hi, I'm <span class="highlight">John Philji</span></h1>
+        <h2><span class="typewriter-text"></span></h2>
+    </section>
+      
+    
+      <!-- Optional: Add a "scroll down" or "about" button -->
+      <div class="scroll-down">
+        <a href="#about">↓ Scroll Down</a>
+      </div>
+
+      
+    <section class="parallax-home">
+        <img src="Home-Images/sky.png" alt="" id="">
+        <img src="Home-Images/moon.png" alt="Moon" id="moon">
+        <img src="Home-Images/water.png" alt="" id="water">
+        <img src="Home-Images/center-city.png" alt="" id="center-city">
+        <img src="Home-Images/right-city.png" alt="" id="">
+        <img src="Home-Images/left-city.png" alt="" id="">
+        <img src="Home-Images/train.png" alt="" id="train">
+        <img src="Home-Images/rail.png" alt="" id="">
+        <h1 id="text">Parallax Website</h1>
+        <img src="Home-Images/hill-left-1.png" alt="" id="">
+        <img src="Home-Images/hill-right-1.png" alt="" id="">
+    </section>
+
+    <section class="about" id="about">
+        <div class="info-box">
+            <h2>About Me</h2>
+            <p>I’m a first-year engineering student passionate about frontend development, clean UI, and smooth animations. I build mobile apps using Flutter + Firebase and am learning the MERN stack to grow as a full-stack developer. I enjoy hackathons, love playing the keyboard, and am curious about AI/ML and how it can shape creative digital experiences.
+            </p>
+            <a href="#" class="btn">Read More!</a>
+        </div>
+
+        <img src="About-Images/waterfall.png" alt="" id="waterfall" class="about-waterfall">
+        <img src="About-Images/desert-sky.png" alt="">
+        <img src="About-Images/desert-moon.png" alt="" id="desert-moon">
+        <img src="About-Images/desert-NoSky.png" alt="">
+        <img src="About-Images/desert-rock.png" alt="">
+        <img src="About-Images/water.png" alt="">
+        <img src="About-Images/man.png" alt="" id="man">
+        <img src="About-Images/grass.png" alt="">
+    </section>
+
+    <div id="progress">
+        <span id="progress-value">
+            <i class='bx bx-chevrons-up'></i>
+        </span>
+    </div>    
+
+    <section class="skills-section" id="skills">
+      <div class="skills-container">
+        <!-- ===== left info panel ===== -->
+        <div class="skills-info" data-aos="fade-right">
+          <h2>My Creative Skills</h2>
+      <p>As a first-year engineering student, I’m actively exploring full-stack app development with a focus on clean UI/UX and real-world problem solving.</p>
+      <ul>
+        <li>• Currently building mobile apps using <strong>Flutter + Firebase</strong>, focusing on simple, accessible, and functional designs.</li>
+        <li>• Learning the <strong>MERN stack</strong> (MongoDB, Express, React, Node.js) to expand into web development.</li>
+        <li>• Participated in app-based hackathons with an emphasis on user-friendly interfaces, real-time features, and community-focused solutions.</li>
+        <li>• Upcoming goals include integrating authentication, notifications, and refining responsive design for all platforms.</li>
+      </ul></p><br>
+          <a href="https://github.com/yourusername" target="_blank" class="btn">View on GitHub</a>
+        </div>
+    
+        <!-- ===== right bar chart panel ===== -->
+        <div class="skills-bars" data-aos="fade-left">
+          <div class="skill">
+            <div class="skill-header">
+              <span>HTML5</span><span>90%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" style="width: 0%;" data-fill="90%"></div>
+            </div>
+          </div>
+    
+          <div class="skill">
+            <div class="skill-header">
+              <span>CSS3</span><span>80%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" style="width: 0%;" data-fill="80%"></div>
+            </div>
+          </div>
+    
+          <div class="skill">
+            <div class="skill-header">
+              <span>JavaScript</span><span>75%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" style="width: 0%;" data-fill="75%"></div>
+            </div>
+          </div>
+    
+          <div class="skill">
+            <div class="skill-header">
+              <span>React</span><span>70%</span>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" style="width: 0%;" data-fill="70%"></div>
+            </div>
+          </div>
+    
+          <!-- add more .skill blocks similarly -->
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="vertical-timeline" id="timeline" >
+      <h2>My Timeline</h2>
+      <!-- central line -->
+      <div class="vertical-line"></div>
+    
+      <!-- 10th Grade -->
+      <div class="vtl-event">
+        <div class="vtl-dot"></div>
+        <div class="vtl-content">
+          <div class="vtl-date">2022</div>
+          <h4>10th Grade Completed</h4>
+          <p>Nazareth Convent High School, Mumbai</p>
+        </div>
+      </div>
+    
+      <!-- 12th Grade -->
+      <div class="vtl-event">
+        <div class="vtl-dot"></div>
+        <div class="vtl-content">
+          <div class="vtl-date">2024</div>
+          <h4>12th Grade Completed</h4>
+          <p>Allen Institute, Mumbai</p>
+        </div>
+      </div>
+    
+      <!-- Keyboard Cert -->
+      <div class="vtl-event">
+        <div class="vtl-dot"></div>
+        <div class="vtl-content">
+          <div class="vtl-date">2024</div>
+          <h4>Grade 8 Keyboard Certification Completed</h4>
+          <p>Trinity College London</p>
+        </div>
+      </div>
+    
+      <!-- Blender -->
+      <div class="vtl-event">
+        <div class="vtl-dot"></div>
+        <div class="vtl-content">
+          <div class="vtl-date">Jul 2024–Present</div>
+          <h4>Learning Blender</h4>
+          <p>Modeling, animation &amp; rendering workflows</p>
+        </div>
+      </div>
+    
+      <!-- College -->
+      <div class="vtl-event">
+        <div class="vtl-dot"></div>
+        <div class="vtl-content">
+          <div class="vtl-date">Aug 2024–Present</div>
+          <h4>Engineering Undergrad</h4>
+          <p>Computer Engineering, Fr. Conceicao Rodrigues College of Engineering</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3>Driveguard</h3>
+                    <span>Safety First</span>
+                </div>
+                <p>A smart vehicle security concept featuring fingerprint authentication on the steering wheel and knob. Includes a 3D animated demo in Blender to simulate real-world use and highlight its accessibility and security benefits.</p>
+             <br>   <a href="#" class="btn">See Project</a> 
+            </div>
+
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3> Artisans Marketplace</h3>
+                    <span></span>
+                </div>
+                <p>A platform to preserve traditional arts and crafts, allowing artisans to offer online workshops and sell handmade goods. Includes user authentication, artisan profiles, and a simple marketplace layout.</p>
+                <br>  <a href="#" class="btn">See Project</a>
+            </div>
+
+            <div class="card">
+                <img src="projects/Driveguard.png" alt="">
+                <div class="info">
+                    <h3>Personal Portfolio Website</h3>
+                    <span>(HTML, CSS, JavaScript)</span>
+                </div>
+                <p>A responsive parallax-style personal website showcasing your projects, skills, and interests. Includes typewriter effects, smooth scroll, and animated backgrounds for an engaging experience.</p>
+                <br>   <a href="#" class="btn">See Project</a>
+            </div>
+
+        </div>
+    </section>
+
+
+<section class="masonry-gallery" id="gallery">
+  <h2>My Album</h2>
+  <div class="grid">
+        <img src="personal/photo1.jpg" alt="…">
+        <img src="personal/photo2.jpg" alt="…">
+        <img src="personal/photo3.jpg" alt="…">
+        <img src="personal/photo4.jpg" alt="…">
+        <img src="personal/photo5.jpg" alt="…">
+        <img src="personal/photo6.jpg" alt="…">
+        <img src="personal/photo7.jpg" alt="…">
+        <img src="personal/photo8.jpg" alt="…">
+        <img src="personal/photo9.jpg" alt="…">
+        <img src="personal/photo10.jpg" alt="…">
+        <img src="personal/photo11.jpg" alt="…">
+        <img src="personal/photo12.jpg" alt="…">
+        <img src="personal/photo13.jpg" alt="…">
+        <img src="personal/photo14.jpg" alt="…">
+        <img src="personal/photo15.jpg" alt="…">
+        <img src="personal/photo16.jpg" alt="…">
+        <img src="personal/photo17.jpg" alt="…">
+        <img src="personal/photo18.jpg" alt="…">
+        <img src="personal/photo19.jpg" alt="…">
+        <img src="personal/photo20.jpg" alt="…">
+        <!-- more -->
+      </div>
+    </section>
+  <!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+        <!-- Contact Section -->
+<section class="contact" id="contact">
+    <h2>Let's Get In Touch</h2>
+    
+    <div class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <input type="text" required>
+          <label>Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" required>
+          <label>Your Email</label>
+        </div>
+        <div class="form-group">
+          <textarea rows="5" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <small class="feedback">Looks good!</small>
+
+  
+      <div class="social-icons">
+        <a href="https://instagram.com/johnphilji" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://wa.me/919511206109" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </section>
+
+  
+  
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
