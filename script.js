@@ -174,15 +174,58 @@ scrollProgress.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  submitBtn.textContent = 'Sending…';
-  submitBtn.disabled = true;
-  // simulate AJAX
-  setTimeout(() => {
-    submitBtn.textContent = 'Sent ✔️';
-    form.reset();
-  }, 1500);
+// Contact form submission (uses Formspree)
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  const submitBtn = document.getElementById('contact-submit');
+  const feedback = document.querySelector('.feedback');
+
+  // --- Formspree configuration ---
+  // You can put your Formspree endpoint here (recommended for GitHub Pages):
+  // const FORMSPREE_ENDPOINT = 'https://formspree.io/f/abcd1234';
+  // Leave it as an empty string to use the form's data-formspree-endpoint attribute or the form action.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xreapapn';
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      // Choose endpoint order: JS constant -> form data attribute -> form action
+      const endpoint = (FORMSPREE_ENDPOINT && FORMSPREE_ENDPOINT.trim())
+        ? FORMSPREE_ENDPOINT.trim()
+        : (form.dataset.formspreeEndpoint && form.dataset.formspreeEndpoint.trim())
+          ? form.dataset.formspreeEndpoint.trim()
+          : form.action;
+
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (resp.ok) {
+        submitBtn.textContent = 'Sent ✔️';
+        feedback.textContent = 'Message sent — thank you!';
+        feedback.style.color = '#0a7b3d';
+        form.reset();
+      } else {
+        const data = await resp.json().catch(() => ({}));
+        let msg = 'Oops — there was a problem sending your message.';
+        if (data && data.error) msg = data.error;
+        feedback.textContent = msg;
+        feedback.style.color = '#c0392b';
+      }
+    } catch (err) {
+      feedback.textContent = 'Network error. Try again later.';
+      feedback.style.color = '#c0392b';
+    } finally {
+      submitBtn.disabled = false;
+      setTimeout(() => { submitBtn.textContent = 'Send Message'; }, 1800);
+    }
+  });
 });
 
 

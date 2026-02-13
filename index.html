@@ -259,20 +259,24 @@
     <h2>Let's Get In Touch</h2>
     
     <div class="contact-container">
-      <form class="contact-form">
+      <!-- Replace YOUR_FORM_ID with the Formspree form ID you get from https://formspree.io -->
+       <!-- You can paste your full Formspree endpoint here in data-formspree-endpoint
+         e.g. data-formspree-endpoint="https://formspree.io/f/abcd1234" -->
+       <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" data-formspree-endpoint="" method="POST">
         <div class="form-group">
-          <input type="text" required>
+          <input type="text" name="name" id="name" required>
           <label>Your Name</label>
         </div>
         <div class="form-group">
-          <input type="email" required>
+          <input type="email" name="_replyto" id="email" required>
           <label>Your Email</label>
         </div>
         <div class="form-group">
-          <textarea rows="5" required></textarea>
+          <textarea name="message" id="message" rows="5" required></textarea>
           <label>Your Message</label>
         </div>
-        <button type="submit">Send Message</button>
+        <input type="hidden" name="_subject" value="New message from portfolio site">
+        <button type="submit" id="contact-submit">Send Message</button>
       </form>
       <small class="feedback">Looks good!</small>
 
