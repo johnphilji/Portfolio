@@ -181,14 +181,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('contact-submit');
   const feedback = document.querySelector('.feedback');
 
+  const emailInput = document.getElementById('email');
+  if (emailInput) {
+    emailInput.addEventListener('input', () => {
+      if (emailInput.checkValidity()) {
+        feedback.textContent = '';
+      }
+    });
+  }
+
   // --- Formspree configuration ---
   // You can put your Formspree endpoint here (recommended for GitHub Pages):
   // const FORMSPREE_ENDPOINT = 'https://formspree.io/f/abcd1234';
   // Leave it as an empty string to use the form's data-formspree-endpoint attribute or the form action.
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xreapapn';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjbpbze';
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
+
+    // Validate email syntax before sending
+    if (emailInput && !emailInput.checkValidity()) {
+      feedback.textContent = 'Please enter a valid email address.';
+      feedback.style.color = '#c0392b';
+      emailInput.focus();
+      return;
+    }
+
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
