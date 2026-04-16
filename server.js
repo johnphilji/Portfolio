@@ -27,7 +27,7 @@ const contactHandler = require('./api/contact');
 app.post('/api/contact', contactHandler);
 
 // Fallback for SPA routing/direct access
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
