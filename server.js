@@ -2,8 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const fetch = require('node-fetch') || global.fetch; // Use global fetch if node-fetch isn't installed (Node 18+)
-
+// using native global fetch available in Node.js 18+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
