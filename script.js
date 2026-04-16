@@ -194,7 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // You can put your Formspree endpoint here (recommended for GitHub Pages):
   // const FORMSPREE_ENDPOINT = 'https://formspree.io/f/abcd1234';
   // Leave it as an empty string to use the form's data-formspree-endpoint attribute or the form action.
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjbpbze';
+  // Changed endpoint to the new local backend
+  const FORMSPREE_ENDPOINT = '/api/contact';
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -218,10 +219,16 @@ document.addEventListener('DOMContentLoaded', () => {
           ? form.dataset.formspreeEndpoint.trim()
           : form.action;
 
+      // Convert FormData to JSON object for the Express backend
+      const formDataObj = Object.fromEntries(new FormData(form).entries());
+
       const resp = await fetch(endpoint, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(formDataObj),
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
       });
 
       if (resp.ok) {
