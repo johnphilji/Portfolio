@@ -233,8 +233,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (resp.ok) {
         submitBtn.textContent = 'Sent ✔️';
-        feedback.textContent = 'Message sent — thank you!';
-        feedback.style.color = '#0a7b3d';
+        feedback.textContent = '';
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
         form.reset();
       } else {
         const data = await resp.json().catch(() => ({}));
