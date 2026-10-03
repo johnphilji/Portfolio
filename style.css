@@ -198,8 +198,30 @@ section{
     z-index: 1000;
     object-fit: cover;
     pointer-events: none;
+    /* Unify with the dark/neon theme */
+    filter: grayscale(80%) sepia(20%) hue-rotate(180deg) brightness(0.6) contrast(1.2);
 }
 
+.parallax-caption {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(29, 0, 44, 0.85);
+    border: 1px solid #12f7ff;
+    color: #12f7ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    z-index: 1005;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(18, 247, 255, 0.3);
+    pointer-events: auto;
+    font-weight: 500;
+}
+
+.parallax-caption i {
+    margin-right: 5px;
+}
 
 .about img.about-waterfall{
     position: absolute;

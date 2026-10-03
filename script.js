@@ -91,18 +91,22 @@ window.addEventListener("scroll",()=>{
 });
 
 const typewriterTexts = [
-    "a Computer Engineering Student.",
     "a Frontend Developer.",
-    "a Music Enthusiast.",
-    "passionate about UI/UX.",
-    "exploring AI and ML."
+    "a UI/UX Designer.",
+    "an AI/ML Enthusiast.",
+    "a 3rd-year Engineering Student."
   ];
   
   let typewriterIndex = 0;
-  let charIndex = 0;
-  let currentText = "";
-  let isDeleting = false;
+  let currentText = typewriterTexts[0];
+  let charIndex = currentText.length;
+  let isDeleting = true;
   const typewriterElement = document.querySelector(".typewriter-text");
+  
+  // Set initial text to prevent mid-animation visual glitches
+  if (typewriterElement) {
+    typewriterElement.textContent = currentText;
+  }
   
   function type() {
     if (typewriterIndex >= typewriterTexts.length) typewriterIndex = 0;
@@ -112,7 +116,9 @@ const typewriterTexts = [
       ? currentText.substring(0, charIndex--)
       : currentText.substring(0, charIndex++);
   
-    typewriterElement.textContent = displayedText;
+    if (typewriterElement) {
+        typewriterElement.textContent = displayedText;
+    }
   
     if (!isDeleting && charIndex === currentText.length) {
       isDeleting = true;
@@ -127,7 +133,8 @@ const typewriterTexts = [
   }
   
   document.addEventListener("DOMContentLoaded", () => {
-    type();
+    // Start with a delay so the full text is readable on load
+    setTimeout(type, 1500);
   });
 
   // after AOS.init()
